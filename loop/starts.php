@@ -77,6 +77,37 @@ for($i=0;$i<$stars;$i++){
 
 ?>
 
+<h2>菱形</h2>
+<?php
+
+$stars=11;
+
+if($stars%2==0){
+    $stars=$stars+1;
+}
+
+for($i=0;$i<$stars;$i++){
+
+    if($i<=floor($stars/2)){
+        $y=$i;
+    }else{
+        $y=$stars-1-$i;
+    }
+
+    for($j=0;$j<floor($stars/2)-$y;$j++){
+        echo "&nbsp;";
+    }
+
+    for($k=0;$k<$y*2+1;$k++){
+        echo "*";
+    }
+    echo "<br>";
+}
+
+
+?>
+
+
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
