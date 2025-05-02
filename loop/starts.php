@@ -155,7 +155,7 @@ for($i=0;$i<$w;$i++){
 
 
 
-$stars=21;
+$stars=11;
 
 if($stars%2==0){
     $stars=$stars+1;
@@ -188,8 +188,126 @@ for($i=0;$i<$stars;$i++){
 }
 
 ?>
+<h2>尋找字元</h2>
+
+<?php
+$string="This is a good day";
+$target="a";
+$is_find=0;
+$counter=0;
+echo strlen($string);
+while($is_find==0 && $counter<strlen($string)){
+    
+    if($string[$counter] == $target){
+        $is_find=1;
+
+    }
+    echo $counter;
+    echo $is_find;
+    $counter++;
+    echo ",";
+    echo $counter;
+    echo "<BR>";
+
+}
+
+if($is_find){
+
+    echo "目標字元".$target."在字串的第".$counter."個位置";
+
+}else{
+
+    echo "字串中沒有你要找的".$target;
+}
 
 
+?>
+<h2>尋找字元-中文字</h2>
+
+<?php
+$string="今天真是個出遊的好日子啊~";
+$target="出";
+$is_find=0;
+$counter=0;
+echo $string;
+echo "<br>";
+echo $target;
+echo "<br>";
+//echo mb_strlen($string);
+while($is_find==0 && $counter<mb_strlen($string)){
+    //echo mb_substr($string,$counter,1);
+    //echo "-";
+    if(mb_substr($string,$counter,1) == $target){
+        $is_find=1;
+
+    }
+    //echo $counter;
+    //echo $is_find;
+    $counter++;
+    //echo ",";
+    //echo $counter;
+    //echo "<BR>";
+
+}
+
+if($is_find){
+
+    echo "目標字元".$target."在字串的第".$counter."個位置";
+
+}else{
+
+    echo "字串中沒有你要找的".$target;
+}
+
+
+?>
+<h2>尋找字元-中文詞</h2>
+
+<?php
+$string="This is a good day";
+$target="good";
+$is_find=0;
+$counter=0;
+echo $string;
+echo "<br>";
+echo $target;
+echo "<br>";
+//echo mb_strlen($string);
+while($is_find==0 && $counter<mb_strlen($string)){
+    echo mb_substr($string,$counter,mb_strlen($target));
+    //echo "-";
+    if(mb_substr($string,$counter,mb_strlen($target)) == $target){
+        $is_find=1;
+
+    }
+    //echo $counter;
+    //echo $is_find;
+    $counter++;
+    //echo ",";
+    //echo $counter;
+    echo "<BR>";
+
+}
+
+if($is_find){
+
+    echo "目標字元".$target."在字串的第".$counter."個位置";
+
+}else{
+
+    echo "字串中沒有你要找的".$target;
+}
+
+
+
+
+?>
+<hr>
+<?php 
+
+echo mb_strpos($string,$target);
+
+?>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
