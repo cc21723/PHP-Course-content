@@ -46,5 +46,43 @@ for($i=4;$i>=0;$i--){
 }
 
 ?>
+<h2>正三角形</h2>
+<style>
+    *{
+        font-family:'Courier New', Courier, monospace;
+    }
+</style>
+<?php
+
+$stars=5;
+
+for($i=0;$i<$stars;$i++){
+
+    for($k=0;$k<$stars-1-$i;$k++){
+        echo "&nbsp;";
+
+    }
+
+
+    for($j=0;$j<$i*2+1;$j++){
+
+        echo "*";
+
+    }
+
+    echo "<br>";
+}
+
+
+
+?>
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 </body>
 </html>
