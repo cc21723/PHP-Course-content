@@ -107,7 +107,50 @@ for($i=0;$i<$stars;$i++){
 
 ?>
 
+<h3>矩形</h3>
+<?php
+$w=5;
+for($i=0;$i<$w;$i++){
 
+    for($j=0;$j<$w;$j++){
+
+        if($i==0 || $i==$w-1 || $j==0  || $j==$w-1){
+            echo "*";
+        }else{
+            echo "&nbsp;";
+        }
+        
+
+    }
+
+    echo "<br>";
+}
+
+
+?>
+
+
+<h3>對角線</h3>
+<?php
+$w=11;
+for($i=0;$i<$w;$i++){
+
+    for($j=0;$j<$w;$j++){
+
+        if($i==0 || $i==$w-1 || $j==0  || $j==$w-1 || $i==$j || $i==$w-1-$j){
+            echo "*";
+        }else{
+            echo "&nbsp;";
+        }
+        
+
+    }
+
+    echo "<br>";
+}
+
+
+?>
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
