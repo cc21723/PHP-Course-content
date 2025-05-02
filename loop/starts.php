@@ -149,8 +149,46 @@ for($i=0;$i<$w;$i++){
     echo "<br>";
 }
 
+?>
+<h2>菱形對角線</h2>
+<?php
+
+
+
+$stars=21;
+
+if($stars%2==0){
+    $stars=$stars+1;
+}
+
+for($i=0;$i<$stars;$i++){
+
+    if($i<=floor($stars/2)){
+        $y=$i;
+    }else{
+        $y=$stars-1-$i;
+    }
+
+    for($j=0;$j<floor($stars/2)-$y;$j++){
+        echo "&nbsp;";
+    }
+    //echo "$j";
+
+    for($k=0;$k<$y*2+1;$k++){
+        if(($y+$k+$j)==floor($stars/2) || 
+            abs($y-($k+$j))==floor($stars/2) || 
+            ($k+$j)==floor($stars/2) || 
+            $i==floor($stars/2) ){
+            echo "*";
+        }else{
+            echo "&nbsp;";
+        }
+    }
+    echo "<br>";
+}
 
 ?>
+
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
