@@ -17,6 +17,23 @@ $students=[
     'hebe'=>[ '國文' => 71, '英文' => 62, '數學' => 80, '地理' => 62, '歷史' => 64 ]
 ];
 
+/* $test=[ 95, 64, 70, 90, 84 ];
+for($i=0;$i<count($test);$i++){
+    echo $test[$i];
+} */
+
+foreach($students as $name => $score){
+    
+    echo $name."=";
+    echo "<ul style='list-style-type:circle'>";
+    foreach($score as $subject => $s){
+        echo "<li >";
+        echo $subject .":";
+        echo $s;
+        echo "</li>";
+    }
+    echo "</ul>";
+}
 
 ?>
 </body>
