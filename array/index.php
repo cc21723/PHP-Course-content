@@ -32,17 +32,33 @@ foreach($students as $name => $score){
 }
 
 
+//建立一個變數來儲存$students的所有鍵名 $names=['judy','amo','john','peter','hebe'];
 $names=array_keys($students);
+
+//建立一個迴圈來印出$names的所有鍵名
 for($i=0;$i<count($names);$i++){
+
+    //建立一個變數$n來儲存$students[$names[$i]]
+    //例:$names[0]=>'judy';
+    //例:$students['judy']=>[ '國文' => 95, '英文' => 64, '數學' => 70, '地理' => 90, '歷史' => 84 ];
+
     $n=$students[$names[$i]];
+
+    //建立一個變數來儲存$students[$names[$i]]的所有鍵名 $subjects=['國文','英文','數學','地理','歷史'];
     $subjects=array_keys($n);
+
+    //先印出名字及文字
     echo $names[$i];
     echo "的成績<br>";
-    $tt=$students[$names[$i]];
-    for($j=0;$j<count($tt);$j++){
+
+    //建立一個迴圈來印出$n的所有值
+    for($j=0;$j<count($n);$j++){
+
+        //印出$subjects[$j]的值
         echo $subjects[$j];
         echo ":";
-        echo $tt[$subjects[$j]];
+        //印出$n[$subjects[$j]]的值也就是成績
+        echo $n[$subjects[$j]];
         echo "<br>";
     }  
 
@@ -50,7 +66,28 @@ for($i=0;$i<count($names);$i++){
 //    echo $names[$i];
 }
 
+$sss=serialize($students);
+echo $sss;
+echo "<br>";
+$aa=unserialize($sss);
+print_r($aa);
+echo "<hr>";
+$sss=json_encode($students);
+echo $sss;
+echo "<br>";
+$aa=json_decode($sss);
+print_r($aa);
 
 ?>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 </body>
 </html>
