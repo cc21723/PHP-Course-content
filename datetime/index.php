@@ -130,6 +130,15 @@ echo "距離自己下一次生日還有 $days 天";
 
 
 ?>
+<hr>
+<?php
+
+$mon="2025-05-12";
+for($i=0;$i<5;$i++){
+    $temp=strtotime("+$i week",strtotime($mon));
+    echo date("Y-m-d l",$temp)."<br>";
+}
+?>
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
