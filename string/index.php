@@ -36,6 +36,22 @@ $str=str_repeat("*",strlen($str));
 echo $str;
 
 ?>
+<h2>字串分割</h2>
+<p>將”this,is,a,book”依”,”切割後成為陣列</p>
+<?php
+$str="this,is,a,book";
+$str=explode(",",$str); 
 
+echo "<pre>";
+print_r($str);
+echo "</pre>";
+
+?>
+<h2>字串組合</h2>
+<p>將上例陣列重新組合成“this is a book”</p>
+<?php
+$str=join(" ",$str);
+echo $str;
+?>
 </body>
 </html>
