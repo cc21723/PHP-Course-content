@@ -129,6 +129,30 @@ $style=["font-size:1.1em;color:green;",
 //在指定的關鍵字中加上url連結
 $url=["https://en.wikipedia.org/wiki/Elon_Musk","","","","https://en.wikipedia.org/wiki/NASA"];
 
+
+/* $keywords=[
+           ["馬斯克","font-size:1.1em;color:green;","https://en.wikipedia.org/wiki/Elon_Musk"],
+           ["火星","font-size:1em;color:red;",""],
+           []
+        ]; */
+/* $keywords=[
+           ['content'=>'馬斯克',
+            'style'=>'font-size:1.1em;color:green;',
+            'url'=>'https://en.wikipedia.org/wiki/Elon_Musk'],
+           ['content'=>'火星',
+            'style'=>'font-size:1em;color:red;',
+            'url'=>''],
+           ['content'=>'地球',
+            'style'=>'font-size:1.2em;color:blue;',
+            'url'=>''],
+           ['content'=>'火箭',
+            'style'=>'font-size:1.3em;color:orange;',
+            'url'=>''],
+           ['content'=>'NASA',
+            'style'=>'font-size:1.4em;color:purple;',
+            'url'=>'https://en.wikipedia.org/wiki/NASA']
+        ]; */
+
 foreach($keywords as $index => $keyword){
         if($url[$index]!=""){
             $strwithurl="<a href='$url[$index]'>$keyword</a>";
