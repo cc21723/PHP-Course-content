@@ -127,10 +127,18 @@ $style=["font-size:1.1em;color:green;",
         "font-size:1.3em;color:orange;",
         "font-size:1.4em;color:purple;"];
 //在指定的關鍵字中加上url連結
-$url=[];
+$url=["https://en.wikipedia.org/wiki/Elon_Musk","","","","https://en.wikipedia.org/wiki/NASA"];
 
 foreach($keywords as $index => $keyword){
-    $str=str_replace("$keyword","<span style='$style[$index]'>$keyword</span>",$str);
+        if($url[$index]!=""){
+            $strwithurl="<a href='$url[$index]'>$keyword</a>";
+        }else{
+            $strwithurl=$keyword;
+        }
+
+        $strwithstyle="<span style='$style[$index]'>$strwithurl</span>";
+
+        $str=str_replace("$keyword","$strwithstyle",$str);
 }        
 
 echo "<hr>";
