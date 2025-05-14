@@ -10,7 +10,7 @@
             color:blue;
         }
         table{
-            width:50%;
+            width:70%;
             border-collapse:collapse;
             margin:0 auto;
         }
@@ -46,12 +46,12 @@ for($i=0;$i<6;$i++){
     echo "<tr>";
     
     for($j=0;$j<7;$j++){
-        echo "<td>";
-        $day=$j+1+($i*7)-$firstDayWeek;
-        if($day>0 && $day<=$theDaysOfMonth){
-            echo $day;
-        }
+        $day=$j+($i*7)-$firstDayWeek;
         
+        $date=date("Y-m-d", strtotime(" $day days", strtotime($firstDay)));
+        
+        echo "<td>";        
+            echo $date;
         echo "</td>";
     }
 
