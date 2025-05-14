@@ -23,6 +23,14 @@
 </head>
 <body>
  <h1>線上日曆</h1>  
+
+ <?php
+$today = date("Y-m-d");
+$firstDay = date("Y-m-01");
+$firstDayWeek = date("w", strtotime($firstDay));
+$theDaysOfMonth=date("t", strtotime($firstDay));
+
+?>
  <table>
      <tr>
          <td>日</td>
@@ -39,7 +47,11 @@ for($i=0;$i<6;$i++){
     
     for($j=0;$j<7;$j++){
         echo "<td>";
-        echo "&nbsp;";
+        $day=$j+1+($i*7)-$firstDayWeek;
+        if($day>0 && $day<=$theDaysOfMonth){
+            echo $day;
+        }
+        
         echo "</td>";
     }
 
