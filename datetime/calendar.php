@@ -76,9 +76,6 @@ for($i=0;$i<6;$i++){
             $class=$class ." other-month";
         }
 
-
-
-
         echo "<td class='$class' data-date='$date'>";
             echo date("d",$timestamp);
         echo "</td>";
