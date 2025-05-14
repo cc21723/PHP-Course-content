@@ -10,7 +10,7 @@
             color:blue;
         }
         table{
-            width:70%;
+            min-width:60%;
             border-collapse:collapse;
             margin:0 auto;
         }
@@ -30,6 +30,16 @@
         .holiday{
             background-color:pink;
             color:white;
+        }
+        tr:not(tr:nth-child(1)) td:hover{
+            background-color:lightblue;
+            cursor:pointer;
+            font-size:16px;
+            font-weight:bold;
+        }
+        .pass-date{
+            /* background-color:lightgray; */
+            color:#aaa;
         }
     </style>
 </head>
@@ -76,6 +86,9 @@ for($i=0;$i<6;$i++){
             $class=$class ." other-month";
         }
 
+        if($timestamp<strtotime($today)){
+            $class=$class . " pass-date";
+        }
         echo "<td class='$class' data-date='$date'>";
             echo date("d",$timestamp);
         echo "</td>";
